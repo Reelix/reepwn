@@ -2,7 +2,6 @@
 YELLOW='\033[1;93m'
 CYAN='\033[1;36m'
 NC='\033[0m' # No Color
-groupname=$(id -g -n)
 
 # Code
 echo ""
@@ -30,7 +29,7 @@ find / -user root -type d -perm -722 2>/dev/null
 echo ""
 echo -e "${YELLOW}Finding root owned directories that your group can access${NC}"
 echo -e "---------------------------------------------------------${CYAN}"
-find / -user root -type d -group $groupname 2>/dev/null
+find / -user root -type d -group $(id -g -n) 2>/dev/null
 echo ""
 echo -e "${YELLOW}Finding root owned files that you can edit${NC}"
 echo -e "------------------------------------------${CYAN}"
